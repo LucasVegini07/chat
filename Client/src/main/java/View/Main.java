@@ -228,8 +228,10 @@ public class Main extends JFrame {
 
     private void btSendToAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSendToAllActionPerformed
 
-        JOptionPane.showMessageDialog(null, "Mensagem não pode ser vazia");
-
+        if (tfMessage.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Mensagem não pode ser vazia");
+            return;
+        }
         sendMessage("all;" + tfUserName.getText() + ";" + tfMessage.getText());
     }//GEN-LAST:event_btSendToAllActionPerformed
 
