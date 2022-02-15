@@ -217,10 +217,19 @@ public class Main extends JFrame {
             JOptionPane.showMessageDialog(null, "Não tem nenhum usuário online para enviar mensagem");
             return;
         }
+
+        if (tfMessage.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Mensagem não pode ser vazia");
+            return;
+        }
+
         sendMessage("individual;" + tfUserName.getText() + ";" + cbOnlineUsers.getSelectedItem() + ";" + tfMessage.getText());
     }//GEN-LAST:event_btInvidualMessageActionPerformed
 
     private void btSendToAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSendToAllActionPerformed
+
+        JOptionPane.showMessageDialog(null, "Mensagem não pode ser vazia");
+
         sendMessage("all;" + tfUserName.getText() + ";" + tfMessage.getText());
     }//GEN-LAST:event_btSendToAllActionPerformed
 
