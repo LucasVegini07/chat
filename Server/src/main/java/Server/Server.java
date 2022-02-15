@@ -39,7 +39,7 @@ public class Server {
                 String[] parts = command.split(";");
 
                 if (parts.length < 1) {
-                    out.write("error;Command must be divided by a semicolon!".getBytes());
+                    out.write("error;Comando precisa ser dividido por um ponto e virgula!".getBytes());
                     return;
                 }
 
@@ -81,12 +81,12 @@ public class Server {
     public static String validateName(String ip, String userName) {
 
         if (clients.containsValue(userName)) {
-            return "error;Name is already in use ";
+            return "error;Nome já está sendo usado no sistema ";
         }
 
         clients.put(ip, userName);
         joined(userName);
-        return "success;You are connected";
+        return "success;Bem vindo ao chat";
     }
 
     public static void joined(String userName) {
